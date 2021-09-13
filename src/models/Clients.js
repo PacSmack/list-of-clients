@@ -25,8 +25,6 @@ const clientSchema = new mongoose.Schema({
             ref: 'Provider'
         }
     ]
-
-
 })
 
 
