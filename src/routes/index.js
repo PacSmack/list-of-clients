@@ -8,18 +8,17 @@ const routes = [
     },
     {
         method: 'POST',
-        url: 'api/clients',
-        handler: clientController.addClient,
-        schema: documentation.addClientSchema
+        url: '/api/clients',
+        handler: clientController.addClient        
     },
     {
         method: 'PUT',
-        url: 'api/clients/:id',
+        url: '/api/client/:id',
         handler: clientController.updateClient
     },
     {
         method: 'DELETE',
-        url: 'api/clients/:id',
+        url: '/api/client/:id',
         handler: clientController.deleteClient
     },
 ];

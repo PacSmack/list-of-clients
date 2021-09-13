@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
+const routes = require('./routes')
 
 // require framework
 const fastify = require('fastify')({
     logger: true
 });
+
+routes.forEach((route, index) => {
+    fastify.route(route)
+})
 
 // Declare a route
 fastify.get('/', async (request, reply) => {
