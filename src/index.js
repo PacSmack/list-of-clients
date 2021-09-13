@@ -1,14 +1,16 @@
+const mongoose = require('mongoose');
+
 // require framework
 const fastify = require('fastify')({
     logger: true
-})
+});
 
 // Declare a route
 fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
-})
+});
 
-// Run the server!
+// Run the server
 const start = async () => {
     try {
         await fastify.listen(3000)
@@ -17,5 +19,11 @@ const start = async () => {
         fastify.log.error(err)
         process.exit(1)
     }
-}
-start()
+};
+start();
+
+// connect to DB
+mongoose.connect('mongodb://localhost/listofclients')
+    .then(() => console.log('MongoDB connected...'))
+    .catch(err => console.log(err));
+
