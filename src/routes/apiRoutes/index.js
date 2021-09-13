@@ -1,4 +1,4 @@
-const clientController = require('../controllers/clientController');
+const clientController = require('../../controllers/api/clientController');
 
 const routes = [
     {
